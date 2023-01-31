@@ -6,6 +6,7 @@ import { PrivateRoute } from './PrivateRoute';
 import { RestrictedRoute } from './RestrictedRoute';
 import { refreshUser } from 'redux/auth/operations';
 import { Route, Routes } from 'react-router-dom';
+import { Loader } from './Loader/Loader';
 // import { AppBox } from './App.styled';
 
 const HomePage = lazy(() => import('../pages/Home/Home'));
@@ -25,7 +26,7 @@ export const App = () => {
 // console.log('AppComponent')
 
   return isRefreshing ? (
-    <b>Refreshing user...</b>
+    <Loader/>
   ) : (
     <Routes>
       <Route path="/goit-react-hw-08-phonebook" element={<Layout />}>
